@@ -1,2 +1,2 @@
 # SkeyeEngine
-A poo poo game engine (gen 1)
+A poopoo game engine (gen 1)
