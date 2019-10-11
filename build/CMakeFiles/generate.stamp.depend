@@ -1,0 +1,23 @@
+# CMake generation dependency list for this directory.
+D:/Newfolder/SkeyeEngine/CMakeLists.txt
+D:/Newfolder/SkeyeEngine/build/CMakeFiles/3.15.1/CMakeCCompiler.cmake
+D:/Newfolder/SkeyeEngine/build/CMakeFiles/3.15.1/CMakeCXXCompiler.cmake
+D:/Newfolder/SkeyeEngine/build/CMakeFiles/3.15.1/CMakeRCCompiler.cmake
+D:/Newfolder/SkeyeEngine/build/CMakeFiles/3.15.1/CMakeSystem.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/CMakeCInformation.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/CMakeCXXInformation.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/CMakeCommonLanguageInclude.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/CMakeGenericSystem.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/CMakeInitializeConfigs.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/CMakeLanguageInformation.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/CMakeRCInformation.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/CMakeSystemSpecificInformation.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/CMakeSystemSpecificInitialize.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/Compiler/MSVC-C.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/Compiler/MSVC-CXX.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/Platform/Windows-MSVC-C.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/Platform/Windows-MSVC-CXX.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/Platform/Windows-MSVC.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/Platform/Windows.cmake
+D:/Newfolder/gep_sdk/opt/cmake-3.15.1/share/cmake-3.15/Modules/Platform/WindowsPaths.cmake

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Newfolder\SkeyeEngine\build\CMakeFiles\0b32522a9fbeecfca6af3ef9d9a8318f\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{8156EB75-C47C-311E-835E-D48D51AA99D8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
