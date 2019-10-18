@@ -1,4 +1,0 @@
-D:/Newfolder/SkeyeEngine/build/CMakeFiles/SkeyeEngine.dir
-D:/Newfolder/SkeyeEngine/build/CMakeFiles/game.dir
-D:/Newfolder/SkeyeEngine/build/CMakeFiles/ALL_BUILD.dir
-D:/Newfolder/SkeyeEngine/build/CMakeFiles/ZERO_CHECK.dir

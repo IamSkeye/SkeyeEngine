@@ -1,9 +1,0 @@
-﻿  Checking Build System
-  CMake is re-running because D:/Newfolder/SkeyeEngine/build/CMakeFiles/generate.stamp is out-of-date.
-    the file 'D:/Newfolder/SkeyeEngine/CMakeLists.txt'
-    is newer than 'D:/Newfolder/SkeyeEngine/build/CMakeFiles/generate.stamp.depend'
-    result='-1'
-  -- Selecting Windows SDK version 10.0.17134.0 to target Windows 10.0.18362.
-  -- Configuring done
-  -- Generating done
-  -- Build files have been written to: D:/Newfolder/SkeyeEngine/build
