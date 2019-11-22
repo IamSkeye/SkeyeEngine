@@ -9,11 +9,15 @@ src/SkeyeEngine/Entity.h
 src/SkeyeEngine/Component.h
 src/SkeyeEngine/Keyboard.h
 src/SkeyeEngine/Environment.h
+src/SkeyeEngine/Exception.h
+src/SkeyeEngine/MeshRenderer.h
 src/SkeyeEngine/Core.cpp
 src/SkeyeEngine/Entity.cpp
 src/SkeyeEngine/Component.cpp
 src/SkeyeEngine/Keyboard.cpp
 src/SkeyeEngine/Environment.cpp
+src/SkeyeEngine/Exception.cpp
+src/SkeyeEngine/MeshRenderer.cpp
 )
 
 target_link_libraries(SkeyeEngine SDL2 opengl32 glew32)
