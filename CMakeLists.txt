@@ -6,6 +6,8 @@ src
 )
 
 add_library(SkeyeEngine
+src/SkeyeEngine/SkeyeEngine.h
+src/SkeyeEngine/NonCopyable.h
 src/SkeyeEngine/Core.h
 src/SkeyeEngine/Entity.h
 src/SkeyeEngine/Component.h

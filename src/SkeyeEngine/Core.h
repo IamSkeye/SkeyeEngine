@@ -3,26 +3,35 @@
 
 #pragma once
 
+#include "NonCopyable.h"
+#include "Entity.h"
+
 #include <memory>
 #include <list>
 
-class Environment;
-class Entity;
-class Keyboard;
+namespace SkeyeEngine
+{
+  class Environment;
+  class Entity;
+  class Keyboard;
 
-class Core {
+  class Core : private NonCopyable
+  {
   private:
     std::shared_ptr<Environment> environment;
-	  std::shared_ptr<Keyboard> keyboard;
+    std::shared_ptr<Keyboard> keyboard;
     std::list<std::shared_ptr<Entity>> entities;
     bool running;
 
   public:
+    Core();
+    ~Core();
+
     static std::shared_ptr<Core> initialize();
-	  std::shared_ptr<Entity> addEntitiy();
+    std::shared_ptr<Entity> addEntity();
 
-	  void start();
-	  void stop();
-};
-
+    void run();
+    void stop();
+  };
+}
 #endif

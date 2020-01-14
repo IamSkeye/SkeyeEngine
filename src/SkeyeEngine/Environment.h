@@ -3,13 +3,18 @@
 
 #pragma once
 
-class Environment {
+namespace SkeyeEngine
+{
+  class Environment{
   private:
     float deltaTime;
 
   public:
+    Environment();
+    ~Environment();
+
     float getDeltaTime();
 
-};
-
+  };
+}
 #endif

@@ -11,7 +11,9 @@
 #define WINDOW_WIDTH 640
 #define WINDOW_HEIGHT 480
 
-class MeshRenderer : Component {
+namespace SkeyeEngine
+{
+  class MeshRenderer : Component {
   private:
     GLuint vaoId;
     GLuint programId;
@@ -19,8 +21,11 @@ class MeshRenderer : Component {
 
 
   public:
+    MeshRenderer();
+    ~MeshRenderer();
+
     void initialise();
     void renderer();
-};
-
+  };
+}
 #endif
