@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 2.6)
 project(SkeyeEngine)
 
-include_directories(src)
+include_directories(
+src
+)
 
 add_library(SkeyeEngine
 src/SkeyeEngine/Core.h
@@ -22,8 +24,9 @@ src/SkeyeEngine/MeshRenderer.cpp
 
 target_link_libraries(SkeyeEngine SDL2 opengl32 glew32)
 add_executable(game
+src/game/TestScreen.h
 src/game/main.cpp
-
+src/game/TestScreen.cpp
 )
 
 target_link_libraries(game SkeyeEngine) 
