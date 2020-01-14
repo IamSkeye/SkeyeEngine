@@ -18,6 +18,7 @@ namespace SkeyeEngine
   class Core : private NonCopyable
   {
   private:
+    std::weak_ptr<Core> self;
     std::shared_ptr<Environment> environment;
     std::shared_ptr<Keyboard> keyboard;
     std::list<std::shared_ptr<Entity>> entities;

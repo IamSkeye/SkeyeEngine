@@ -13,7 +13,7 @@
 
 namespace SkeyeEngine
 {
-  class MeshRenderer : Component {
+  class MeshRenderer : public Component {
   private:
     GLuint vaoId;
     GLuint programId;
@@ -22,10 +22,10 @@ namespace SkeyeEngine
 
   public:
     MeshRenderer();
-    ~MeshRenderer();
+   ~MeshRenderer();
 
-    void initialise();
-    void renderer();
+   void onInit();
+   void onDisplay();
   };
 }
 #endif

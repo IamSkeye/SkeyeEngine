@@ -25,12 +25,12 @@ namespace SkeyeEngine
     std::shared_ptr<Keyboard> getKeyboard();
     std::shared_ptr<Environment> getEnvironment();
 
-    virtual void onInit();
-    virtual void onStart();
-    virtual void onTick();
-    virtual void onDisplay();
-    //virtual void onPostDisplay();
-    //virtual void onGui();
+    virtual void onInit() {};
+    virtual void onStart() {};
+    virtual void onTick() {};
+    virtual void onDisplay() {};
+    virtual void onPostDisplay() {};
+    virtual void onGui() {};
     //TODO: Any other events you want to handle.
   };
 }

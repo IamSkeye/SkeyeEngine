@@ -1,34 +1,30 @@
+#include "Core.h"
 #include "Entity.h"
+#include "Component.h"
 
 namespace SkeyeEngine
 {
   Entity::Entity() {}
   Entity::~Entity() {}
 
-  std::shared_ptr<Core> getCore()
+  std::shared_ptr<Core> Entity::getCore()
   {
     return 0;
   }
 
-  //template<typename T>
-  //std::shared_ptr<T> Entity::addComponent()
-  //{
-  //  std::shared_ptr<T> rtn = std::make_shared<T>();
-
-  //  components.push_back(rtn);
-  //  rtn->OnInitialized();
-
-  //  return rtn;
-  //}
-
-
-  void tick()
+  void Entity::tick()
   {
-
+    for (std::list<std::shared_ptr<Component>>::iterator it = components.begin(); it != components.end(); it++)
+    {
+      (*it)->onTick();
+    }
   }
 
-  void display()
+  void Entity::display()
   {
-
+    for (std::list<std::shared_ptr<Component>>::iterator it = components.begin(); it != components.end(); it++)
+    {
+      (*it)->onDisplay();
+    }
   }
 }

@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <rend/rend.h>
 #include "NonCopyable.h"
 #include "Core.h"
 #include "Entity.h"
@@ -12,7 +13,9 @@
 #include "Exception.h"
 #include "MeshRenderer.h"
 
-#include <iostream>
-#include <memory>
+namespace SkeyeEngine
+{
+  using namespace rend;
+}
 
 #endif

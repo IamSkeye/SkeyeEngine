@@ -24,7 +24,36 @@ src/SkeyeEngine/Exception.cpp
 src/SkeyeEngine/MeshRenderer.cpp
 )
 
-target_link_libraries(SkeyeEngine SDL2 opengl32 glew32)
+add_library(rend
+src/rend/Buffer.h
+src/rend/Context.h
+src/rend/Exception.h
+src/rend/mathutil.h
+src/rend/Mesh.h
+src/rend/rend.h
+src/rend/RenderTexture.h
+src/rend/Shader.h
+src/rend/Texture.h
+src/rend/TextureAdapter.h
+src/rend/Util.h
+src/rend/Buffer.cpp
+src/rend/Context.cpp
+src/rend/Exception.cpp
+src/rend/Mesh.cpp
+src/rend/RenderTexture.cpp
+src/rend/Shader.cpp
+src/rend/Texture.cpp
+src/rend/Util.cpp
+)
+
+target_link_libraries(SkeyeEngine SDL2 rend)
+
+if(MSVC)
+  target_link_libraries(rend glew32 opengl32)
+else()
+  target_link_libraries(rend GLEW GL)
+endif()
+
 add_executable(game
 src/game/TestScreen.h
 src/game/main.cpp
