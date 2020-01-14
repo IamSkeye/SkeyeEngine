@@ -1,6 +1,8 @@
 #ifndef _COMPONENT_H_
 #define _COMPONENT_H_
 
+#pragma once
+
 #include <memory>
 
 class Core;

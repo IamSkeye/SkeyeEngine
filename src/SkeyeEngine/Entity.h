@@ -1,8 +1,10 @@
 #ifndef _ENTITY_H_
 #define _ENTITY_H_
 
-#include <list>
+#pragma once
+
 #include <memory>
+#include <list>
 
 class Core;
 class Component;

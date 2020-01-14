@@ -1,6 +1,8 @@
 #ifndef _KEYBOARD_H_
 #define _KEYBOARD_H_
 
+#pragma once
+
 class Keyboard {
   private:
     bool getKey(int keyCode);

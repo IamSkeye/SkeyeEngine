@@ -1,3 +1,8 @@
+#ifndef _MESH_RENDERER_H_
+#define _MESH_RENDERER_H_
+
+#pragma once
+
 #include "Component.h"
 
 #include <SDL2/SDL.h>
@@ -17,3 +22,5 @@ class MeshRenderer : Component {
     void initialise();
     void renderer();
 };
+
+#endif

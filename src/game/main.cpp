@@ -6,12 +6,13 @@
 
 int main() {
 	std::cout << "output\n";
-	system("pause");
 
   MeshRenderer mesh;
 
-  mesh.initialise;
-  mesh.renderer;
+  //mesh.initialise();
+  //mesh.renderer();
+
+  system("pause");
 
 	return 0;
 }

@@ -1,6 +1,8 @@
 #ifndef _CORE_H_
 #define _CORE_H_
 
+#pragma once
+
 #include <memory>
 #include <list>
 
@@ -11,9 +13,9 @@ class Keyboard;
 class Core {
   private:
     std::shared_ptr<Environment> environment;
-	  std::list<std::shared_ptr<Entity>> entities;
 	  std::shared_ptr<Keyboard> keyboard;
-	  bool running;
+    std::list<std::shared_ptr<Entity>> entities;
+    bool running;
 
   public:
     static std::shared_ptr<Core> initialize();
@@ -21,7 +23,6 @@ class Core {
 
 	  void start();
 	  void stop();
-
 };
 
 #endif

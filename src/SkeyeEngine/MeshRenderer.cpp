@@ -162,7 +162,6 @@ void MeshRenderer::initialise(){
   glDeleteShader(fragmentShaderId);
 }
 
-
 void MeshRenderer::renderer() 
 {
   bool quit = false;
