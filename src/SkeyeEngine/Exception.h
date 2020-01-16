@@ -6,12 +6,12 @@
 #include <exception>
 #include <string>
 
-namespace SkeyeEngine
+namespace Skeye
 {
   namespace rend
   {
-
-    struct Exception : public std::exception
+    struct Exception : 
+      public std::exception
     {
       Exception(const std::string& message);
       virtual ~Exception() throw();

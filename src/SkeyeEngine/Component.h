@@ -5,14 +5,15 @@
 
 #include <memory>
 
-namespace SkeyeEngine
+namespace Skeye
 {
   class Core;
   class Entity;
   class Keyboard;
   class Environment;
 
-  class Component {
+  class Component 
+  {
   private:
     std::weak_ptr<Entity> entity;
 

@@ -4,11 +4,10 @@
 
 #include <iostream>
 
-namespace SkeyeEngine
+namespace Skeye
 {
   namespace rend
   {
-
     Exception::Exception(const std::string& message)
     {
       this->message = message;
@@ -20,6 +19,5 @@ namespace SkeyeEngine
     {
       return message.c_str();
     }
-
   }
 }

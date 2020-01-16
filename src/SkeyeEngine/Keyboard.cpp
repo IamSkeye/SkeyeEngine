@@ -1,6 +1,6 @@
 #include "Keyboard.h"
 
-namespace SkeyeEngine
+namespace Skeye
 {
   Keyboard::Keyboard() {}
   Keyboard::~Keyboard() {}

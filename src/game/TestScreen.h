@@ -3,7 +3,12 @@
 
 #pragma once
 
-class TestScreen
+#include <SkeyeEngine/Component.h>
+
+using namespace Skeye;
+
+class TestScreen : 
+  public Component
 {
 private:
 
@@ -15,4 +20,4 @@ public:
 
 };
 
-#endif // !_TEST_SCREEN_H_
+#endif 

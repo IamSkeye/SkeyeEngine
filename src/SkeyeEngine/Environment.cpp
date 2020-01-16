@@ -1,6 +1,6 @@
 #include "Environment.h"
 
-namespace SkeyeEngine
+namespace Skeye
 {
   Environment::Environment() {}
   Environment::~Environment() {}

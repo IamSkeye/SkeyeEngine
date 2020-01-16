@@ -5,24 +5,33 @@
 
 #include "Component.h"
 
+#include <rend/rend.h>
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 
 #define WINDOW_WIDTH 640
 #define WINDOW_HEIGHT 480
 
-namespace SkeyeEngine
+using namespace rend;
+
+namespace Skeye
 {
-  class MeshRenderer : public Component {
+  class Renderer : 
+    public Component 
+  {
   private:
+    std::shared_ptr<Context> context;
+    std::shared_ptr<Shader> shader;
+    std::shared_ptr<Buffer> buffer;
+    
     GLuint vaoId;
     GLuint programId;
     SDL_Window *window;
 
 
   public:
-    MeshRenderer();
-   ~MeshRenderer();
+    Renderer();
+   ~Renderer();
 
    void onInit();
    void onDisplay();

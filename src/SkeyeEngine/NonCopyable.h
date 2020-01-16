@@ -3,7 +3,7 @@
 
 #pragma once
 
-namespace SkeyeEngine
+namespace Skeye
 {
   class NonCopyable
   {

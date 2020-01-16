@@ -1,5 +1,5 @@
-#ifndef _SKEYE_ENGINE_H_
-#define _SKEYE_ENGINE_H_
+#ifndef _SKEYE_H_
+#define _SKEYE_H_
 
 #pragma once
 
@@ -11,9 +11,11 @@
 #include "Environment.h"
 #include "Keyboard.h"
 #include "Exception.h"
-#include "MeshRenderer.h"
+#include "Renderer.h"
+#include "ShaderProgram.h"
+#include "Window.h"
 
-namespace SkeyeEngine
+namespace Skeye
 {
   using namespace rend;
 }

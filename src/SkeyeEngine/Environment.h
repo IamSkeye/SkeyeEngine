@@ -3,9 +3,10 @@
 
 #pragma once
 
-namespace SkeyeEngine
+namespace Skeye
 {
-  class Environment{
+  class Environment
+  {
   private:
     float deltaTime;
 

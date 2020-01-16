@@ -9,14 +9,14 @@
 #include <memory>
 #include <list>
 
-namespace SkeyeEngine
+namespace Skeye
 {
   class Environment;
   class Entity;
   class Keyboard;
 
-  class Core : private NonCopyable
-  {
+  class Core : 
+    private NonCopyable {
   private:
     std::weak_ptr<Core> self;
     std::shared_ptr<Environment> environment;

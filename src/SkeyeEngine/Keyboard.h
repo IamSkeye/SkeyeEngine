@@ -2,9 +2,10 @@
 #define _KEYBOARD_H_
 
 #pragma once
-namespace SkeyeEngine
+namespace Skeye
 {
-  class Keyboard {
+  class Keyboard 
+  {
   private:
     bool getKey(int keyCode);
     bool getKeyDown(int keyCode);

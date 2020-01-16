@@ -2,7 +2,7 @@
 #include "Entity.h"
 #include "Component.h"
 
-namespace SkeyeEngine
+namespace Skeye
 {
   Entity::Entity() {}
   Entity::~Entity() {}

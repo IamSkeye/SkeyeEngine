@@ -6,7 +6,7 @@ src
 )
 
 add_library(SkeyeEngine
-src/SkeyeEngine/SkeyeEngine.h
+src/SkeyeEngine/Skeye.h
 src/SkeyeEngine/NonCopyable.h
 src/SkeyeEngine/Core.h
 src/SkeyeEngine/Entity.h
@@ -14,14 +14,22 @@ src/SkeyeEngine/Component.h
 src/SkeyeEngine/Keyboard.h
 src/SkeyeEngine/Environment.h
 src/SkeyeEngine/Exception.h
-src/SkeyeEngine/MeshRenderer.h
+src/SkeyeEngine/Renderer.h
+src/SkeyeEngine/ShaderProgram.h
+src/SkeyeEngine/Window.h
+src/SkeyeEngine/Transform.h
+src/SkeyeEngine/Camera.h
 src/SkeyeEngine/Core.cpp
 src/SkeyeEngine/Entity.cpp
 src/SkeyeEngine/Component.cpp
 src/SkeyeEngine/Keyboard.cpp
 src/SkeyeEngine/Environment.cpp
 src/SkeyeEngine/Exception.cpp
-src/SkeyeEngine/MeshRenderer.cpp
+src/SkeyeEngine/Renderer.cpp
+src/SkeyeEngine/ShaderProgram.cpp
+src/SkeyeEngine/Window.cpp
+src/SkeyeEngine/Transform.cpp
+src/SkeyeEngine/Camera.cpp
 )
 
 add_library(rend

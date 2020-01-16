@@ -1,7 +1,7 @@
 #include "Core.h"
 #include "Entity.h"
 
-namespace SkeyeEngine
+namespace Skeye
 {
   Core::Core() {}
   Core::~Core() {}

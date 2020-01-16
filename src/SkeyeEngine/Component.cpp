@@ -1,7 +1,7 @@
 #include "Component.h"
 #include "Entity.h"
 
-namespace SkeyeEngine
+namespace Skeye
 {
   Component::Component() {}
   Component::~Component() {}
