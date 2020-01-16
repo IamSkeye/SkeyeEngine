@@ -6,14 +6,18 @@
 #include "NonCopyable.h"
 #include "Entity.h"
 
+#include <rend/rend.h>
 #include <memory>
 #include <list>
+
+using namespace rend;
 
 namespace Skeye
 {
   class Environment;
   class Entity;
   class Keyboard;
+  class Camera;
 
   class Core : 
     private NonCopyable {
@@ -21,6 +25,9 @@ namespace Skeye
     std::weak_ptr<Core> self;
     std::shared_ptr<Environment> environment;
     std::shared_ptr<Keyboard> keyboard;
+    std::shared_ptr<Context> context;
+    std::shared_ptr<Camera> currentCamera;
+
     std::list<std::shared_ptr<Entity>> entities;
     bool running;
 
@@ -29,10 +36,16 @@ namespace Skeye
     ~Core();
 
     static std::shared_ptr<Core> initialize();
+    std::shared_ptr<Core> getCore();
     std::shared_ptr<Entity> addEntity();
+    std::shared_ptr<Context> getContext();
+    std::shared_ptr<Camera> getCamera();
 
     void run();
     void stop();
+
+    
+
   };
 }
 #endif

@@ -16,7 +16,7 @@ public:
   TestScreen();
   ~TestScreen();
 
-  void onDisplay();
+ // void onDisplay();
 
 };
 

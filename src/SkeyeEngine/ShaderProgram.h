@@ -19,6 +19,8 @@ namespace Skeye
   public:
     ShaderProgram();
     ~ShaderProgram();
+
+    void setAttribute();
   };
 }
 

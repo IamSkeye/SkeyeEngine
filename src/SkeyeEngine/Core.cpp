@@ -9,8 +9,10 @@ namespace Skeye
   std::shared_ptr<Core> Core::initialize()
   {
     std::shared_ptr<Core> rtn = std::make_shared<Core>();
+    rtn->currentCamera = std::make_shared<Camera>();
+    rtn->context = Context::initialize();
+    
     rtn->self = rtn;
-
     return rtn;
   }
 
@@ -24,7 +26,6 @@ namespace Skeye
   }
 
   void Core::run() {
-    //running = true;
     while (running)
     {
 		  for(std::list<std::shared_ptr<Entity>>::iterator it = entities.begin(); it != entities.end(); it++)
@@ -45,4 +46,20 @@ namespace Skeye
   {
 
   }
+
+  std::shared_ptr<Core> Core::getCore()
+  {
+    return self.lock();
+  }
+
+  std::shared_ptr<Context> Core::getContext()
+  {
+    return context;
+  }
+  
+  std::shared_ptr<Camera> Core::getCamera()
+  {
+    return currentCamera;
+  }
+
 }

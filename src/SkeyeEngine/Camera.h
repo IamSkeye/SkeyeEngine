@@ -3,9 +3,16 @@
 
 #pragma once
 
+#include "Component.h"
+
+#include <rend/rend.h>
+
+using namespace rend;
+
 namespace Skeye
 {
-  class Camera
+  class Camera :
+    public Component
   {
   private:
        
@@ -14,7 +21,7 @@ namespace Skeye
     Camera();
     ~Camera();
 
-
+    glm::mat4 getViewMatrix();
   };
 }
 

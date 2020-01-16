@@ -19,6 +19,7 @@ src/SkeyeEngine/ShaderProgram.h
 src/SkeyeEngine/Window.h
 src/SkeyeEngine/Transform.h
 src/SkeyeEngine/Camera.h
+src/SkeyeEngine/Mesh.h
 src/SkeyeEngine/Core.cpp
 src/SkeyeEngine/Entity.cpp
 src/SkeyeEngine/Component.cpp
@@ -30,6 +31,7 @@ src/SkeyeEngine/ShaderProgram.cpp
 src/SkeyeEngine/Window.cpp
 src/SkeyeEngine/Transform.cpp
 src/SkeyeEngine/Camera.cpp
+src/SkeyeEngine/Mesh.cpp
 )
 
 add_library(rend

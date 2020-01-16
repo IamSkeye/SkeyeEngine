@@ -23,6 +23,20 @@ namespace Skeye
     ~Entity();
 
     std::shared_ptr<Core> getCore();
+    
+    template<typename T>
+    std::shared_ptr<T> getComponent()
+    {
+      for (std::list<std::shared_ptr<Components>>::iterator it = components.begin(); it != components.end(); it++)
+      {
+        std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(*it);
+        if (rtn)
+        {
+          return rtn;
+        }
+      }
+      // throw expcption
+    }
 
     template<typename T>
     std::shared_ptr<T> addComponent() 

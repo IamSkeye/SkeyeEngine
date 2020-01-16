@@ -11,6 +11,7 @@
 
 #define WINDOW_WIDTH 640
 #define WINDOW_HEIGHT 480
+#define STB_IMAGE_IMPLEMENTATION
 
 using namespace rend;
 
@@ -22,7 +23,7 @@ namespace Skeye
   private:
     std::shared_ptr<Context> context;
     std::shared_ptr<Shader> shader;
-    std::shared_ptr<Buffer> buffer;
+    std::shared_ptr<Mesh> mesh;
     
     GLuint vaoId;
     GLuint programId;
@@ -35,6 +36,15 @@ namespace Skeye
 
    void onInit();
    void onDisplay();
+
+   void useShader();
+   void useMesh();
+   void setModelMat();
+   void setViewMat();
+   void setProjMat();
+
+   void loadModel(const char* path);
+   void loadTexture(const char* path);
   };
 }
 #endif

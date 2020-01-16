@@ -25,4 +25,10 @@ namespace Skeye
   {
     return 0;
   }
+
+  std::shared_ptr<Transform> Component::getTransform()
+  {
+    return entity.lock()->getComponent<Transform>();
+  }
 }
+// getTransform is a function inside Component class that does entity.lock()->getComponent<Transform>(); <- returns that

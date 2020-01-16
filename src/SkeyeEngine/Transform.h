@@ -17,7 +17,7 @@ namespace Skeye
   private:
     vec3 localPosition;
     vec3 localRotation;
-    vec3 loaclScale;
+    vec3 localScale;
 
   public:
     Transform();
@@ -31,8 +31,10 @@ namespace Skeye
     void setLocalRotation(vec3 _rotation);
     void setLocalScale(vec3 _scale);
 
-    void getModelMatrix();
+    glm::mat4 getModelMatrix();
   };
 }
+
+// getViewMatrix is a function in the Transform class, that takes the ModelMatrix, does glm::inverse(ModelMatrix) and returns that ( return glm::inverse(ModelMatrix);)
 
 #endif 

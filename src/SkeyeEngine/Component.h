@@ -11,6 +11,7 @@ namespace Skeye
   class Entity;
   class Keyboard;
   class Environment;
+  class Transform;
 
   class Component 
   {
@@ -25,6 +26,7 @@ namespace Skeye
     std::shared_ptr<Entity> getEntity();
     std::shared_ptr<Keyboard> getKeyboard();
     std::shared_ptr<Environment> getEnvironment();
+    std::shared_ptr<Transform> getTransform();
 
     virtual void onInit() {};
     virtual void onStart() {};
@@ -37,3 +39,5 @@ namespace Skeye
 }
 
 #endif // !_COMPONENT_H_
+
+// getTransform is a function inside Component class that does entity.lock()->getComponent<Transform>(); <- returns that
