@@ -3,72 +3,72 @@
 namespace Skeye
 {
   ShaderProgram::ShaderProgram() {
-    GLuint vertexShaderId = glCreateShader(GL_VERTEX_SHADER);
+    //GLuint vertexShaderId = glCreateShader(GL_VERTEX_SHADER);
 
-    //Attach source code
-    glShaderSource(vertexShaderId, 1, &vertexShaderSrc, NULL); //(Shader, Count, Source code location, length[?])
+    ////Attach source code
+    //glShaderSource(vertexShaderId, 1, &vertexShaderSrc, NULL); //(Shader, Count, Source code location, length[?])
 
-    //Compile shader
-    glCompileShader(vertexShaderId);
+    ////Compile shader
+    //glCompileShader(vertexShaderId);
 
-    //Check for errors
-    GLint success = 0;
-    glGetShaderiv(vertexShaderId, GL_COMPILE_STATUS, &success);
-    if (!success)
-    {
-      throw std::exception();
-    }
+    ////Check for errors
+    //GLint success = 0;
+    //glGetShaderiv(vertexShaderId, GL_COMPILE_STATUS, &success);
+    //if (!success)
+    //{
+    //  throw std::exception();
+    //}
 
-    //Create fragment shader
-    GLuint fragmentShaderId = glCreateShader(GL_FRAGMENT_SHADER);
+    ////Create fragment shader
+    //GLuint fragmentShaderId = glCreateShader(GL_FRAGMENT_SHADER);
 
-    //Attach source code
-    glShaderSource(fragmentShaderId, 1, &fragmentShaderSrc, NULL);
+    ////Attach source code
+    //glShaderSource(fragmentShaderId, 1, &fragmentShaderSrc, NULL);
 
-    //Compile Shader
-    glCompileShader(fragmentShaderId);
+    ////Compile Shader
+    //glCompileShader(fragmentShaderId);
 
-    //Check for errors
-    glGetShaderiv(fragmentShaderId, GL_COMPILE_STATUS, &success);
-    if (!success)
-    {
-      throw std::exception();
-    }
+    ////Check for errors
+    //glGetShaderiv(fragmentShaderId, GL_COMPILE_STATUS, &success);
+    //if (!success)
+    //{
+    //  throw std::exception();
+    //}
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //Shader Program
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////Shader Program
 
-    //Create shader program
-    programId = glCreateProgram();
+    ////Create shader program
+    //programId = glCreateProgram();
 
-    //Attach shader objects
-    glAttachShader(programId, vertexShaderId);
-    glAttachShader(programId, fragmentShaderId);
+    ////Attach shader objects
+    //glAttachShader(programId, vertexShaderId);
+    //glAttachShader(programId, fragmentShaderId);
 
-    //set VAO to correct (first) position
-    glBindAttribLocation(programId, 0, "in_Position");
-    glBindAttribLocation(programId, 1, "in_Color");
+    ////set VAO to correct (first) position
+    //glBindAttribLocation(programId, 0, "in_Position");
+    //glBindAttribLocation(programId, 1, "in_Color");
 
-    if (glGetError() != GL_NO_ERROR)
-    {
-      throw std::exception();
-    }
+    //if (glGetError() != GL_NO_ERROR)
+    //{
+    //  throw std::exception();
+    //}
 
-    //Link program
-    glLinkProgram(programId);
+    ////Link program
+    //glLinkProgram(programId);
 
-    //Check for errors
-    glGetProgramiv(programId, GL_LINK_STATUS, &success);
-    if (!success)
-    {
-      throw std::exception();
-    }
+    ////Check for errors
+    //glGetProgramiv(programId, GL_LINK_STATUS, &success);
+    //if (!success)
+    //{
+    //  throw std::exception();
+    //}
 
-    //Detach and destroy shader objects
-    glDetachShader(programId, vertexShaderId);
-    glDeleteShader(vertexShaderId);
-    glDetachShader(programId, fragmentShaderId);
-    glDeleteShader(fragmentShaderId);
+    ////Detach and destroy shader objects
+    //glDetachShader(programId, vertexShaderId);
+    //glDeleteShader(vertexShaderId);
+    //glDetachShader(programId, fragmentShaderId);
+    //glDeleteShader(fragmentShaderId);
   };
 
   ShaderProgram::~ShaderProgram() {};

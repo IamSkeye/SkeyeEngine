@@ -3,6 +3,8 @@
 #include "Transform.h"
 #include "Camera.h"
 #include "Exception.h"
+#include "stb_image.h"
+
 #include <fstream>
 #include <iostream>
 
@@ -19,97 +21,46 @@ namespace Skeye
   }
   Renderer::~Renderer() {}
 
-
-  //Vertex shader source code
-  const GLchar *vertexShaderSrc =
-    "attribute vec3 in_Position;	                                                " \
-    "attribute vec4 in_Color;			                                                " \
-    "uniform mat4 in_Model;			                                                  " \
-    "uniform mat4 in_View;			                                                  " \
-    "uniform mat4 in_Proj;	                                                      " \
-    "											                                                        " \
-    "varying vec4 ex_Color;				                                                " \
-    "											                                                        " \
-    "void main()							                                                    " \
-    "{                                                                            " \
-    "	 gl_Position = in_Proj * in_View * in_Model * vec4(in_Position, 1.0);       " \
-    "	 ex_Color = in_Color;			        	                                        " \
-    "}							                  		                                        ";  //'in_Position' - For ensuring the shader is linked in the correct position to the VAO[?]
-                                                                                     //'in_Color'/'ex_Color' - For interpolating colors between vertex and fragment shaders
-
-
-  //Fragment shader source code
-  const GLchar *fragmentShaderSrc =
-    "varying vec4 ex_Color;		  	" \
-    "								            	" \
-    "void main()			      			" \
-    "{							            	" \
-    "  gl_FragColor = ex_Color;		" \
-    "}						            		";  //For any fragment drawn, use the colour stored in the uniform in_Color.
-
   const GLchar *VertFragSrc =
-    "\n#ifdef VERTEX\n                                                            " \
-    "attribute vec3 in_Position;	                                                " \
-    "attribute vec4 in_Color;			                                                " \
-    "uniform mat4 in_Model;			                                                  " \
-    "uniform mat4 in_View;			                                                  " \
-    "uniform mat4 in_Proj;	                                                      " \
-    "											                                                        " \
-    "varying vec4 ex_Color;				                                                " \
-    "											                                                        " \
-    "void main()							                                                    " \
-    "{                                                                            " \
-    "	 gl_Position = in_Proj * in_View * in_Model * vec4(in_Position, 1.0);       " \
-    "	 ex_Color = in_Color;			        	                                        " \
-    "}							                  		                                        " \  //'in_Position' - For ensuring the shader is linked in the correct position to the VAO[?]
-    "\n#endif\n                                                                   " \ //'in_Color'/'ex_Color' - For interpolating colors between vertex and fragment shaders
-    "											                                                        " \
-    "\n#ifdef FRAGMENT\n                                                          " \
-    "varying vec4 ex_Color;		  	                                                " \
-    "								                                                            	" \
-    "void main()			      		                                                 	" \
-    "{							            	                                                " \
-    "  gl_FragColor = ex_Color;		                                                " \
-    "}						            		                                                " \  //For any fragment drawn, use the colour stored in the uniform in_Color.
-    "\n#endif\n  					                                                        ";
+    "\n#ifdef VERTEX\n                                                            \n" \
+    "attribute vec3 in_Position;	                                                \n" \
+    "attribute vec4 in_Color;			                                                \n" \
+    "uniform mat4 in_Model;			                                                  \n" \
+    "uniform mat4 in_View;			                                                  \n" \
+    "uniform mat4 in_Proj;	                                                      \n" \
+    "											                                                        \n" \
+    "varying vec4 ex_Color;				                                                \n" \
+    "											                                                        \n" \
+    "void main()							                                                    \n" \
+    "{                                                                            \n" \
+    "	 gl_Position = in_Proj * in_View * in_Model * vec4(in_Position, 1.0);       \n" \
+    "	 ex_Color = in_Color;			        	                                        \n" \
+    "}							                  		                                        \n" \
+    "\n#endif\n                                                                   \n" \
+    "											                                                        \n" \
+    "\n#ifdef FRAGMENT\n                                                          \n" \
+    "varying vec4 ex_Color;		  	                                                \n" \
+    "								                                                            	\n" \
+    "void main()			      		                                                 	\n" \
+    "{							            	                                                \n" \
+    "  gl_FragColor = ex_Color;		                                                \n" \
+    "}						            		                                                \n" \
+    "\n#endif\n  					                                                        \n";
+  
+                                                                                        //'in_Position' - For ensuring the shader is linked in the correct position to the VAO[?]
+                                                                                       //'in_Color'/'ex_Color' - For interpolating colors between vertex and fragment shaders
+                                                                                      //For any fragment drawn, use the colour stored in the uniform in_Color.
+  const GLfloat	positions[] = {
+    0.0f, 0.5f, 0.0f,
+    -0.5f, -0.5f, 0.0f,
+    0.5f, -0.5f, 0.0f
+  };
 
-  //const GLfloat	positions[] = {
-  //  0.0f, 0.5f, 0.0f,
-  //  -0.5f, -0.5f, 0.0f,
-  //  0.5f, -0.5f, 0.0f
-  //};
-
-  //const GLfloat colors[] = {
-  //  1.0f, 0.0f, 0.0f, 1.0f,
-  //  0.0f, 1.0f, 0.0f, 1.0f,
-  //  0.0f, 0.0f, 1.0f, 1.0f
-  //};
-
-  ////Vertex shader source code
-  //const GLchar *vertexShaderSrc =
-  //  "attribute vec3 in_Position;	           " \
-  //  "attribute vec4 in_Color;			           " \
-  //  "uniform mat4 in_Model;			           " \
-  //  "uniform mat4 in_View;			           " \
-  //  "uniform mat4 in_Projection;	           " \
-  //  "											                   " \
-  //  "varying vec4 ex_Color;				           " \
-  //  "											                   " \
-  //  "void main()							               " \
-  //  "{                                       " \
-  //  "	 gl_Position = in_Porjection * in_View * in_Model * vec4(in_Position, 1.0); " \
-  //  "	 ex_Color = in_Color;			        	   " \
-  //  "}							                  		   ";  //'in_Position' - For ensuring the shader is linked in the correct position to the VAO[?]
-  //                                              //'in_Color'/'ex_Color' - For interpolating colors between vertex and fragment shaders
-
-  ////Fragment shader source code
-  //const GLchar *fragmentShaderSrc =
-  //  "varying vec4 ex_Color;		  	" \
-  //  "								            	" \
-  //  "void main()			      			" \
-  //  "{							            	" \
-  //  "  gl_FragColor = ex_Color;		" \
-  //  "}						            		";  //For any fragment drawn, use the colour stored in the uniform in_Color.
+  const GLfloat colors[] = {
+    1.0f, 0.0f, 0.0f, 1.0f,
+    0.0f, 1.0f, 0.0f, 1.0f,
+    0.0f, 0.0f, 1.0f, 1.0f
+  };
 
   void Renderer::onInit() 
   {
@@ -132,22 +83,14 @@ namespace Skeye
 	    throw std::exception();
     }
 
-
     context = getCore()->getContext();
     shader = context->createShader();
     shader->parse(VertFragSrc);
     shader->setUniform("in_Proj", perspective(radians(45.0f), 1.0f, 0.1f, 100.0f));
     shader->setUniform("in_Model", getTransform()->getModelMatrix());
-    shader->setUniform("in_View", getCore()->getCamera()->getTransform->getViewMatrix());
-    shader->setMesh
+    shader->setUniform("in_View", getCore()->getCamera()->getViewMatrix());
+    shader->setMesh(getCore()->getContext()->createMesh());
 
-    // In core, make variable called currentCamera
-    // In core.cpp -> currentCamera = std::make_shared<Camera>();
-    // create a function in Core getCamera -> return currenCamera;
-
-
-    // getTransform is a function inside Component class that does entity.lock()->getComponent<Transform>(); <- returns that
-    // getViewMatrix is a function in the Transform class, that takes the ModelMatrix, does glm::inverse(ModelMatrix) and returns that ( return glm::inverse(ModelMatrix);)
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
     //VBO
@@ -367,31 +310,6 @@ namespace Skeye
     SDL_Quit();
   }
 
-  void Renderer::useShader()
-  {
-    
-  }
-
-    void Renderer::useMesh()
-  {
-
-  }
-
-    void Renderer::setModelMat()
-  {
-
-  }
-
-    void Renderer::setViewMat()
-  {
-
-  }
-
-    void Renderer::setProjMat()
-  {
-
-  }
-
   void Renderer::loadModel(const char* path)
   {
     std::shared_ptr<Context> context = getCore()->getContext();
@@ -451,7 +369,7 @@ namespace Skeye
       stbi_image_free(data);
     }
 
-    shape->setTexture("u_Texture", texture);
+    //shape->setTexture("u_Texture", texture);
 
   }
 }

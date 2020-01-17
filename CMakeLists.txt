@@ -20,6 +20,7 @@ src/SkeyeEngine/Window.h
 src/SkeyeEngine/Transform.h
 src/SkeyeEngine/Camera.h
 src/SkeyeEngine/Mesh.h
+src/SkeyeEngine/stb_image.h
 src/SkeyeEngine/Core.cpp
 src/SkeyeEngine/Entity.cpp
 src/SkeyeEngine/Component.cpp

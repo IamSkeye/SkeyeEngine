@@ -27,14 +27,19 @@ namespace Skeye
     template<typename T>
     std::shared_ptr<T> getComponent()
     {
-      for (std::list<std::shared_ptr<Components>>::iterator it = components.begin(); it != components.end(); it++)
+      for (std::list<std::shared_ptr<Component>>::iterator it = components.begin(); it != components.end(); it++)
       {
         std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(*it);
-        if (rtn)
+        if (*it)
         {
           return rtn;
         }
       }
+
+      //if (!rtn)
+      //{
+      //  throw std::exception();
+      //}
       // throw expcption
     }
 

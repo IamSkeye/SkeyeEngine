@@ -29,19 +29,12 @@ namespace Skeye
     GLuint programId;
     SDL_Window *window;
 
-
   public:
     Renderer();
    ~Renderer();
 
    void onInit();
    void onDisplay();
-
-   void useShader();
-   void useMesh();
-   void setModelMat();
-   void setViewMat();
-   void setProjMat();
 
    void loadModel(const char* path);
    void loadTexture(const char* path);

@@ -1,5 +1,6 @@
 #include "Core.h"
 #include "Entity.h"
+#include "Camera.h"
 
 namespace Skeye
 {

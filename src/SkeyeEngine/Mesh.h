@@ -14,8 +14,6 @@ namespace Skeye
   private:
 
 
-
-
   public:
     Mesh();
     ~Mesh();
