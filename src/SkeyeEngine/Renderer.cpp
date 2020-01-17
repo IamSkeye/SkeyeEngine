@@ -145,6 +145,8 @@ namespace Skeye
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+	loadModel("../res/curuthers/curuthers.mtl");
+  //loadTexture("../res/curuthers/curuthers.mtl");
   }
 
   void Renderer::onDisplay()
@@ -196,6 +198,7 @@ namespace Skeye
       shader->setUniform("in_Proj", perspective(radians(45.0f), 1.0f, 0.1f, 100.0f));
       shader->setUniform("in_Model", getTransform()->getModelMatrix());
       shader->setUniform("in_View", getCore()->getCamera()->getViewMatrix());
+
       shader->setMesh(mesh);
 
       //Draw 3 vertices
@@ -246,7 +249,7 @@ namespace Skeye
       int h = 0;
       int bpp = 0;
 
-      unsigned char *data = stbi_load("share/rend/samples/curuthers/Whiskers_diffuse.png",
+      unsigned char *data = stbi_load(path,
         &w, &h, &bpp, 3);
 
       if (!data)
