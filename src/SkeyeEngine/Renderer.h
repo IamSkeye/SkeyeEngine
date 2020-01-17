@@ -29,7 +29,6 @@ namespace Skeye
     GLuint programId;
     SDL_Window *window;
     
-
   public:
     Renderer();
    ~Renderer();

@@ -36,7 +36,4 @@ namespace Skeye
   }
 }
 
-// getViewMatrix is a function in the Transform class, that takes the ModelMatrix, does glm::inverse(ModelMatrix) and returns that ( return glm::inverse(ModelMatrix);)
-
-
 

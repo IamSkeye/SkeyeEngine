@@ -35,11 +35,8 @@ namespace Skeye
         {
           return rtn;
         }
-        else
-        {
-          throw std::exception();
-        }
       }
+      throw std::exception();
     }
 
     template<typename T>

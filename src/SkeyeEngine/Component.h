@@ -35,10 +35,8 @@ namespace Skeye
     virtual void onDisplay() {};
     virtual void onPostDisplay() {};
     virtual void onGui() {};
-    //TODO: Any other events you want to handle.
+
   };
 }
 
 #endif // !_COMPONENT_H_
-
-// getTransform is a function inside Component class that does entity.lock()->getComponent<Transform>(); <- returns that

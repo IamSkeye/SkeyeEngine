@@ -24,19 +24,22 @@ namespace Skeye
   class Camera;
 
   class Core : 
-    private NonCopyable {
+    private NonCopyable 
+  {
+    friend class Camera;
   private:
     std::weak_ptr<Core> self;
+    //std::vector<std::weak_ptr<Camera>> cameras;
 
     std::shared_ptr<Environment> environment;
     std::shared_ptr<Keyboard> keyboard;
     std::shared_ptr<Context> context;
     std::shared_ptr<Camera> currentCamera;
     std::list<std::shared_ptr<Entity>> entities;
-
-    bool running;
-
+    
     SDL_Window *window;
+    
+    bool running;
 
   public:
     Core();

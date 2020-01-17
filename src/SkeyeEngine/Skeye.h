@@ -14,6 +14,8 @@
 #include "Renderer.h"
 #include "ShaderProgram.h"
 #include "Window.h"
+#include "Transform.h"
+#include "Camera.h"
 
 namespace Skeye
 {

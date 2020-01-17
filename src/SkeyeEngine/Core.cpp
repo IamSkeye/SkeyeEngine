@@ -35,8 +35,6 @@ namespace Skeye
     
     rtn->self = rtn;
     return rtn;
-
-
   }
 
   std::shared_ptr<Entity> Core::addEntity()

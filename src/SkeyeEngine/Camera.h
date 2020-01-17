@@ -15,13 +15,15 @@ namespace Skeye
     public Component
   {
   private:
-       
 
   public:
     Camera();
     ~Camera();
 
     glm::mat4 getViewMatrix();
+    glm::mat4 getProjMatrix();
+
+    void onInit();
   };
 }
 

@@ -34,4 +34,3 @@ namespace Skeye
      return getEntity()->getComponent<Transform>();
   }
 }
-// getTransform is a function inside Component class that does entity.lock()->getComponent<Transform>(); <- returns that

@@ -17,8 +17,8 @@ namespace Skeye
   0.0f, 0.0f, 1.0f, 1.0f
   };
 
-  void Mesh::setPositions()
+  GLfloat Mesh::getPositions()
   {
-
+    return 0;
   }
 }
