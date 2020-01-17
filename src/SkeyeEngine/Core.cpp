@@ -18,9 +18,7 @@ namespace Skeye
       throw std::exception();
     }
 
-    rtn->window = SDL_CreateWindow("Window Name",
-      SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-      500, 500, SDL_WINDOW_RESIZABLE | SDL_WINDOW_INPUT_GRABBED | SDL_WINDOW_OPENGL);
+    rtn->window = SDL_CreateWindow("SkeyeEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
     if (!SDL_GL_CreateContext(rtn->window))
     {
@@ -88,5 +86,10 @@ namespace Skeye
   std::shared_ptr<Camera> Core::getCamera()
   {
     return currentCamera;
+  }
+
+  SDL_Window* Core::getWindow()
+  {
+    return window;
   }
 }

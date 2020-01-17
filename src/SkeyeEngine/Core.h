@@ -47,6 +47,7 @@ namespace Skeye
     std::shared_ptr<Entity> addEntity();
     std::shared_ptr<Context> getContext();
     std::shared_ptr<Camera> getCamera();
+    SDL_Window* getWindow();
 
     void run();
     void stop();

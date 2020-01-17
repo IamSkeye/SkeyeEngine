@@ -9,7 +9,7 @@ namespace Skeye
 
   std::shared_ptr<Core> Entity::getCore()
   {
-    return 0;
+    return core.lock();
   }
 
   void Entity::tick()

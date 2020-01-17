@@ -64,27 +64,8 @@ namespace Skeye
 
   void Renderer::onInit() 
   {
-    //Window setup
-
-    if(SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
-      throw std::exception();
-    }
-
-    window = SDL_CreateWindow("Triangle", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
-
-    if (!SDL_GL_CreateContext(window))
-    {
-	    throw std::exception();
-    }
-
-    if (glewInit() != GLEW_OK)
-    {
-	    throw std::exception();
-    }
-
-
-
+    window = getCore()->getWindow();
+    context = getCore()->getContext();
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
     //VBO
@@ -164,75 +145,6 @@ namespace Skeye
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-
-    ///////// Shader.h ////////////////
-    //Create new vertex shader
-    //GLuint vertexShaderId = glCreateShader(GL_VERTEX_SHADER);
-
-    ////Attach source code
-    //glShaderSource(vertexShaderId, 1, &vertexShaderSrc, NULL); //(Shader, Count, Source code location, length[?])
-
-    ////Compile shader
-    //glCompileShader(vertexShaderId);
-
-    ////Check for errors
-    //GLint success = 0;
-    //glGetShaderiv(vertexShaderId, GL_COMPILE_STATUS, &success);
-    //if (!success)
-    //{
-    //  throw std::exception();
-    //}
-
-    ////Create fragment shader
-    //GLuint fragmentShaderId = glCreateShader(GL_FRAGMENT_SHADER);
-
-    ////Attach source code
-    //glShaderSource(fragmentShaderId, 1, &fragmentShaderSrc, NULL);
-
-    ////Compile Shader
-    //glCompileShader(fragmentShaderId);
-
-    ////Check for errors
-    //glGetShaderiv(fragmentShaderId, GL_COMPILE_STATUS, &success);
-    //if (!success)
-    //{
-    //  throw std::exception();
-    //}
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////Shader Program
-
-    ////Create shader program
-    //programId = glCreateProgram();
-
-    ////Attach shader objects
-    //glAttachShader(programId, vertexShaderId);
-    //glAttachShader(programId, fragmentShaderId);
-
-    ////set VAO to correct (first) position
-    //glBindAttribLocation(programId, 0, "in_Position");
-    //glBindAttribLocation(programId, 1, "in_Color");
-
-    //if (glGetError() != GL_NO_ERROR)
-    //{
-    //  throw std::exception();
-    //}
-
-    ////Link program
-    //glLinkProgram(programId);
-
-    ////Check for errors
-    //glGetProgramiv(programId, GL_LINK_STATUS, &success);
-    //if (!success)
-    //{
-    //  throw std::exception();
-    //}
-
-    ////Detach and destroy shader objects
-    //glDetachShader(programId, vertexShaderId);
-    //glDeleteShader(vertexShaderId);
-    //glDetachShader(programId, fragmentShaderId);
-    //glDeleteShader(fragmentShaderId);
   }
 
   void Renderer::onDisplay()
@@ -358,7 +270,7 @@ namespace Skeye
       stbi_image_free(data);
     }
 
-    //shape->setTexture("u_Texture", texture);
+    mesh->setTexture("u_Texture", texture);
 
   }
 }
