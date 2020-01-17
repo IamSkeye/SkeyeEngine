@@ -9,6 +9,10 @@
 
 using namespace rend;
 
+/*
+* Handles manipulation of shapes. can transform, rotate and scale. also handles model matrix.
+*/
+
 namespace Skeye
 {
   class Transform :

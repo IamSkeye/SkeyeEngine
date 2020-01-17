@@ -6,6 +6,11 @@
 #include <memory>
 #include <list>
 
+/**
+* Represtents an object in our world. 
+* Components are assigned to entities to create unique behaviours
+*/
+
 namespace Skeye
 {
   class Core;

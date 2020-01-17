@@ -4,10 +4,13 @@
 #pragma once
 
 #include <memory>
-
+/**
+* Parent class for all our components
+* Helps link them to Entity class
+*/
 namespace Skeye
 {
-  class Core;
+  class Core; 
   class Entity;
   class Keyboard;
   class Environment;

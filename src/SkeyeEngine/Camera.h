@@ -8,6 +8,9 @@
 #include <rend/rend.h>
 
 using namespace rend;
+/**
+*Camera, holds data on where we are viewing the world from
+*/
 
 namespace Skeye
 {

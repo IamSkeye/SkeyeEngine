@@ -3,6 +3,8 @@
 
 #pragma once
 
+
+
 namespace Skeye
 {
   class Environment

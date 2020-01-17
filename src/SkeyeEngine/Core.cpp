@@ -2,7 +2,6 @@
 #include "Entity.h"
 #include "Camera.h"
 
-
 namespace Skeye
 {
   Core::Core() {}
@@ -61,8 +60,6 @@ namespace Skeye
       {
         (*it)->display();
       }
-
-      //TODO: Post display etc
     }
   }
 

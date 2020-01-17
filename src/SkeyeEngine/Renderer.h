@@ -15,6 +15,10 @@
 
 using namespace rend;
 
+/**
+* Renders images from given points and files
+*/
+
 namespace Skeye
 {
   class Renderer : 

@@ -16,6 +16,11 @@
 
 using namespace rend;
 
+/** Core
+* This is the heart of our engine
+* This will intialise the program, hold an array of all the entities in our world, and will handle our main game loop.
+*/
+
 namespace Skeye
 {
   class Environment;

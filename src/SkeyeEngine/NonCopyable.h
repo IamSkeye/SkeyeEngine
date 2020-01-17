@@ -3,6 +3,10 @@
 
 #pragma once
 
+/*
+* Classes inherit this so that they become non copyable
+*/
+
 namespace Skeye
 {
   class NonCopyable
