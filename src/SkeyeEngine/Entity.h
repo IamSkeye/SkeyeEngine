@@ -16,6 +16,7 @@ namespace Skeye
     friend class Core;
   private:
     std::weak_ptr<Core> core;
+    std::weak_ptr<Entity> self;
     std::list<std::shared_ptr<Component>> components;
 
   public:
@@ -30,23 +31,23 @@ namespace Skeye
       for (std::list<std::shared_ptr<Component>>::iterator it = components.begin(); it != components.end(); it++)
       {
         std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(*it);
-        if (*it)
+        if (rtn)
         {
           return rtn;
         }
+        else
+        {
+          throw std::exception();
+        }
       }
-
-      //if (!rtn)
-      //{
-      //  throw std::exception();
-      //}
-      // throw expcption
     }
 
     template<typename T>
     std::shared_ptr<T> addComponent() 
     {
       std::shared_ptr<T> rtn = std::make_shared<T>();
+
+      rtn->entity = self;
 
       components.push_back(rtn);
       rtn->onInit();
@@ -59,6 +60,8 @@ namespace Skeye
     {
       std::shared_ptr<T> rtn = std::make_shared<T>();
 
+      rtn->entity = self;
+
       components.push_back(rtn);
       rtn->onInit(A a);
 
@@ -70,6 +73,8 @@ namespace Skeye
     {
       std::shared_ptr<T> rtn = std::make_shared<T>();
 
+      rtn->entity = self;
+
       components.push_back(rtn);
       rtn->onInit(A a, B b);
 
@@ -80,6 +85,8 @@ namespace Skeye
     std::shared_ptr<T> addComponent(A a, B b, C c)
     {
       std::shared_ptr<T> rtn = std::make_shared<T>();
+
+      rtn->entity = self;
 
       components.push_back(rtn);
       rtn->onInit(A a, B b, C c);

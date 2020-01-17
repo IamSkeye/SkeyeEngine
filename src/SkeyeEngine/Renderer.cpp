@@ -83,13 +83,7 @@ namespace Skeye
 	    throw std::exception();
     }
 
-    context = getCore()->getContext();
-    shader = context->createShader();
-    shader->parse(VertFragSrc);
-    shader->setUniform("in_Proj", perspective(radians(45.0f), 1.0f, 0.1f, 100.0f));
-    shader->setUniform("in_Model", getTransform()->getModelMatrix());
-    shader->setUniform("in_View", getCore()->getCamera()->getViewMatrix());
-    shader->setMesh(getCore()->getContext()->createMesh());
+
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -282,18 +276,13 @@ namespace Skeye
       // Shader (how to draw)
       // Matrices (where to draw)
 
-      /*
-
-
-        useShader(shader);
-        useMesh(mesh);
-        setModelMat(getTransform()->getModel());
-        setViewMat(getCamera()->getView());
-        setProjectionMat(getCore()->getProjection());
-
-        render!!!
-      */
-
+      context = getCore()->getContext();
+      shader = context->createShader();
+      shader->parse(VertFragSrc);
+      shader->setUniform("in_Proj", perspective(radians(45.0f), 1.0f, 0.1f, 100.0f));
+      shader->setUniform("in_Model", getTransform()->getModelMatrix());
+      shader->setUniform("in_View", getCore()->getCamera()->getViewMatrix());
+      shader->setMesh(mesh);
 
       //Draw 3 vertices
       glDrawArrays(GL_TRIANGLES, 0, 3);
@@ -317,7 +306,7 @@ namespace Skeye
     shader = context->createShader();
     shader->parse(VertFragSrc);
 
-    std::shared_ptr<Mesh> shape = context->createMesh();
+    mesh = context->createMesh();
     {
       std::ifstream f;
       f.open(path);
@@ -330,7 +319,7 @@ namespace Skeye
         obj += line + "\n";
       }
 
-      shape->parse(obj);
+      mesh->parse(obj);
     }
   }
 

@@ -1,5 +1,8 @@
 #include "Component.h"
 #include "Entity.h"
+#include "Transform.h"
+#include "Keyboard.h"
+#include "Environment.h"
 
 namespace Skeye
 {
@@ -28,7 +31,7 @@ namespace Skeye
 
   std::shared_ptr<Transform> Component::getTransform()
   {
-    return entity.lock()->getComponent<Transform>();
+     return getEntity()->getComponent<Transform>();
   }
 }
 // getTransform is a function inside Component class that does entity.lock()->getComponent<Transform>(); <- returns that

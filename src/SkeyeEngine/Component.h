@@ -15,6 +15,7 @@ namespace Skeye
 
   class Component 
   {
+    friend class Entity;
   private:
     std::weak_ptr<Entity> entity;
 

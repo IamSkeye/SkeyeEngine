@@ -6,9 +6,13 @@
 #include "NonCopyable.h"
 #include "Entity.h"
 
+#include <SDL2/SDL.h>
 #include <rend/rend.h>
 #include <memory>
 #include <list>
+
+#define WINDOW_WIDTH 640
+#define WINDOW_HEIGHT 480
 
 using namespace rend;
 
@@ -23,13 +27,16 @@ namespace Skeye
     private NonCopyable {
   private:
     std::weak_ptr<Core> self;
+
     std::shared_ptr<Environment> environment;
     std::shared_ptr<Keyboard> keyboard;
     std::shared_ptr<Context> context;
     std::shared_ptr<Camera> currentCamera;
-
     std::list<std::shared_ptr<Entity>> entities;
+
     bool running;
+
+    SDL_Window *window;
 
   public:
     Core();
@@ -43,9 +50,6 @@ namespace Skeye
 
     void run();
     void stop();
-
-    
-
   };
 }
 #endif
